@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrarse</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/estilos.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Entre letras</h1>
+    </header>
+    <nav>
+            <ul>
+                <li><a href="{{url_for('main.index')}}">Inicio</a></li>
+                <li><a href="{{url_for('main.escribir')}}">Escribir</a></li>
+                <li><a href="{{url_for('main.cuenta')}}">Cuenta</a></li>
+            </ul>
+    </nav>
+    <div class="login">
+    <h2>Registrarse</h2>
+    <form action="{{ url_for('main.submit_reg') }}" name="registro" method="post">
+        <label for="usuario">Usuario</label><br>
+        <input type="text" id="usuario" name="usuario" required><br>
+        <label for="email">Email </label><br>
+        <input type="email" id="email" name="email" required><br>
+        <label for="contraseña">Contraseña </label><br>
+        <input type="password" id="contraseña" name="contraseña" required><br>
+        <label for="cocontraseña">Confirmar contraseña</label><br>
+        <input type="password" id="cocontraseña" name="cocontraseña" required><br>
+        <input type="submit" value="Registrarse" onClick="comprobarClave()">
+        <script src="{{ url_for('static',filename='js/scripts.js')  }}"></script>
+    </form>
+    </div>
+</body>
+</html>

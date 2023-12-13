@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Iniciar sesión</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/estilos.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Entre letras</h1>
+    </header>
+    <nav>
+            <ul>
+                <li><a href="{{url_for('main.index')}}">Inicio</a></li>
+                <li><a href="{{url_for('main.escribir')}}">Escribir</a></li>
+                <li><a href="{{url_for('main.cuenta')}}">Cuenta</a></li>
+            </ul>
+    </nav>
+    <div class="login">
+    <h2>Iniciar sesión</h2>
+    <form action="{{ url_for('main.submit_log') }}" method="post">
+        <label for="email" required>Correo electronico</label><br>
+        <input type="email" id="email" name="email"><br>
+        <label for="contraseña" required>Contraseña </label><br>
+        <input type="password" id="contraseña" name="contraseña"><br>
+        <input type="submit" value="Ingresar">
+    </form>
+      <p>¿Aún no tienes una cuenta?<a href="{{url_for('main.registro')}}"> Registrarse</a></p>
+    </div>
+</body>
+</html>

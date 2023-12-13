@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Entre letras</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/estilos.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Entre letras</h1>
+    </header>
+    <nav>
+            <ul>
+                <li><a href="{{url_for('main.index')}}">Inicio</a></li>
+                <li><a href="{{url_for('main.escribir')}}">Escribir</a></li>
+                <li><a href="{{url_for('main.cuenta')}}">Cuenta</a></li>
+            </ul>
+    </nav>
+    <div class="container">
+        <h2>{{ entrada.titulo }}</h2>
+        <p>{{ entrada.contenido }}</p>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro exitoso</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/estilos.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Entre letras</h1>
+    </header>
+    <nav>
+            <ul>
+                <li><a href="{{url_for('main.index')}}">Inicio</a></li>
+                <li><a href="{{url_for('main.escribir')}}">Escribir</a></li>
+                <li><a href="{{url_for('main.cuenta')}}">Cuenta</a></li>
+            </ul>
+    </nav>
+    <div class="resultado">
+    <h2>¡Se ha creado su cuenta exitosamente!</h2>
+    <form action="{{ url_for('main.iniciarss') }}">
+        <input type="submit" value="Iniciar sesión">
+    </form>
+    </div>
+</body>
+</html>
